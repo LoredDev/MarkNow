@@ -1,0 +1,47 @@
+{
+	"name": "@marknow/www",
+	"type": "module",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "pnpm@8.0.0",
+	"engines": {
+		"node": ">=18.0.0",
+		"vscode": "^1.22.0"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@fontsource-variable/fira-code": "^5.0.3",
+		"@fontsource-variable/inter": "^5.0.3",
+		"@iconify-json/solar": "^1.1.1",
+		"@iconify-json/svg-spinners": "^1.1.1",
+		"@iconify/types": "^2.0.0",
+		"@iconify/utils": "^2.1.6",
+		"@poppanator/sveltekit-svg": "^3.0.1",
+		"@sveltejs/adapter-vercel": "^3.0.1",
+		"@sveltejs/kit": "^1.20.2",
+		"@typescript-eslint/eslint-plugin": "^5.59.11",
+		"@typescript-eslint/parser": "^5.59.11",
+		"@unocss/extractor-svelte": "^0.52.7",
+		"cal-sans": "^1.0.1",
+		"mdsvex": "^0.10.6",
+		"rehype-external-links": "^2.1.0",
+		"sass": "^1.63.4",
+		"svelte": "^3.59.1",
+		"svelte-check": "^3.4.3",
+		"tslib": "^2.5.3",
+		"typescript": "^5.1.3",
+		"unocss": "^0.52.7",
+		"unocss-preset-radix": "^2.5.1",
+		"unocss-preset-scrollbar": "^0.2.1",
+		"unplugin-auto-import": "^0.16.4",
+		"unplugin-svelte-components": "^0.2.8",
+		"vite": "^4.3.9"
+	}
+}

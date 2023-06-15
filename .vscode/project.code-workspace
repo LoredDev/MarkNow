@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "../apps/www",
+			"name": "apps/www"
+		},
+		{
+			"path": "../",
+			"name": "ROOT"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"aaron-bond.better-comments",
+			"joshbolduc.commitlint",
+			"dbaeumer.vscode-eslint",
+			"editorconfig.editorconfig",
+			"svelte.svelte-vscode",
+			"lokalise.i18n-ally",
+			"afzalsayed96.icones",
+			"antfu.iconify",
+			"sebsojeda.vscode-svx",
+			"unifiedjs.vscode-mdx",
+			"sibiraj-s.vscode-scss-formatter",
+			"antfu.unocss"
+		]
+	},
+	"settings": {
+		"prettier.enable": false,
+		"editor.formatOnSave": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	}
+}

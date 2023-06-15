@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+/package
+.env
+.env.*
+!.env.example
+pnpm-lock.yaml
+/.husky
+*.svg
+*.scss
+build
+.svelte-kit
+.turbo
+.vercel
