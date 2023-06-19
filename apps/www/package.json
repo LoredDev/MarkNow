@@ -18,7 +18,6 @@
 	},
 	"devDependencies": {
 		"@fontsource-variable/fira-code": "^5.0.3",
-		"@fontsource-variable/inter": "^5.0.3",
 		"@iconify-json/solar": "^1.1.1",
 		"@iconify-json/svg-spinners": "^1.1.1",
 		"@iconify/types": "^2.0.0",
@@ -29,7 +28,6 @@
 		"@typescript-eslint/eslint-plugin": "^5.59.11",
 		"@typescript-eslint/parser": "^5.59.11",
 		"@unocss/extractor-svelte": "^0.52.7",
-		"cal-sans": "^1.0.1",
 		"mdsvex": "^0.10.6",
 		"rehype-external-links": "^2.1.0",
 		"sass": "^1.63.4",
