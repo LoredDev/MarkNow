@@ -25,8 +25,5 @@
 		"husky": "^8.0.3",
 		"turbo": "^1.10.3",
 		"vercel": "^30.2.2"
-	},
-	"lint-staged": {
-		"*": "eslint --fix"
 	}
 }
