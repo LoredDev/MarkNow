@@ -12,4 +12,3 @@ build
 .svelte-kit
 .turbo
 .vercel
-*.woff
