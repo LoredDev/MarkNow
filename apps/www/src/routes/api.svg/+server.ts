@@ -10,7 +10,7 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 
 	const banner = await satori(html,
 		{
-			width: 650,
+			width: 1000,
 			height: 180,
 			fonts: [
 				{
