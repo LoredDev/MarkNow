@@ -31,6 +31,7 @@ module.exports = {
 			},
 			rules: {
 				'no-undef': ['warn'],
+				'import/no-mutable-exports': 'off',
 			},
 		},
 		{
