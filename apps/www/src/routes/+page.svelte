@@ -1,6 +1,28 @@
-<script>
-	// your script goes here
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
-<h1 un-text="red">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<main un-grid="~ rows-4">
+	<div un-h="sm" un-flex="~ justify-center items-center" un-bg="#33578a">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html data.banner}
+	</div>
+	<div un-h="sm" un-flex="~ justify-center items-center" un-bg="#0d1117">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html data.banner}
+	</div>
+	<div un-h="sm" un-flex="~ justify-center items-center" un-bg="#ffffff">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html data.banner}
+	</div>
+	<div un-h="sm" un-flex="~ justify-center items-center" un-bg="#0a0c10">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html data.banner}
+	</div>
+	<div un-h="sm" un-flex="~ justify-center items-center" un-bg="#22272e">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html data.banner}
+	</div>
+</main>
