@@ -226,6 +226,7 @@ module.exports = {
 				'duotone',
 				'tsconfig',
 				'workspace',
+				'woff',
 			],
 			minLength: 4,
 		}],
