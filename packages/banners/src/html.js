@@ -7,11 +7,11 @@
  * @typedef {import('satori').SatoriOptions['fonts'][0]} Font
  *
  * @typedef {{
- * layout: 'vertical' | 'horizontal',
- * dimensions: { width: number, height: number }
- * fonts: { title: Font, subtitle: Font }
- * colors: import('./types').Colors
- * rtl: boolean
+ *   dimensions: { width: number, height: number },
+ *   fonts: { title: Font, subtitle: Font },
+ *   layout: 'vertical' | 'horizontal',
+ *   colors: import('./types').Colors,
+ *   rtl: boolean,
  * }} Props
  * @param {Props} properties
  *

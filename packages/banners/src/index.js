@@ -18,29 +18,20 @@ export default async function banner({
 		foreground: '#000000',
 	},
 	libConfig: config = {},
-	font: customFonts,
+	fonts,
 	rtl = false,
 }) {
 	config.iconHandler ||= icon => getIcon(icon, config?.fetcher);
+	fonts ||= await getMonaSansFonts(config?.reader);
+	title = truncateText(title, layout === 'horizontal' ? 45 : 90);
+	subtitle = truncateText(subtitle, layout === 'horizontal' ? 100 : 200);
 
 	const dimensions = {
 		width: 1000,
-		height: 180,
+		height: layout === 'horizontal' ? 180 : 1300,
 	};
 
-	if (layout === 'horizontal') {
-		title = truncateText(title, 45);
-		subtitle = truncateText(subtitle, 100);
-	}
-	else {
-		title = truncateText(title, 90);
-		subtitle = truncateText(subtitle, 200);
-		dimensions.height = 1300;
-	}
-
-	const bannerFonts = customFonts ?? await getMonaSansFonts(config?.reader);
-
-	const htmlTemplate = generateBannerHtml({ layout, dimensions, fonts: bannerFonts, colors, rtl });
+	const htmlTemplate = generateBannerHtml({ layout, dimensions, fonts, colors, rtl });
 
 	const iconSvg = await config.iconHandler(icon);
 
@@ -54,8 +45,8 @@ export default async function banner({
 	const svg = await satori(vNodes, {
 		...dimensions,
 		fonts: [
-			bannerFonts.title,
-			bannerFonts.subtitle,
+			fonts.title,
+			fonts.subtitle,
 		],
 	});
 

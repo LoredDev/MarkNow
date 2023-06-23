@@ -188,7 +188,7 @@ module.exports = {
 		'@typescript-eslint/semi': ['error', 'always'],
 		'max-depth': ['error', 3],
 		'max-nested-callbacks': ['error', 3],
-		'complexity': ['error', 4],
+		'complexity': ['error', 8],
 		'no-tabs': ['error', { allowIndentationTabs: true }],
 		'spellcheck/spell-checker': ['error', {
 			skipWords: [

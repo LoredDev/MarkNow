@@ -29,7 +29,7 @@ export interface BannerOptions {
 	title: string,
 	subtitle?: string,
 	layout?: 'horizontal' | 'vertical',
-	font?: {
+	fonts?: {
 		title: Font,
 		subtitle: Font,
 	}

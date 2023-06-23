@@ -5,12 +5,12 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 	const banner = await newBanner({
 		title: 'Hello world',
 		subtitle: 'This is a test!',
-		icon: 'https://raw.githubusercontent.com/LoredDev/.github/main/assets/designs/dots-icon-dark.svg',
+		icon: 'solar:hand-shake-bold-duotone',
 		colors: {
 			background: '#000000',
 			foreground: '#ffffff',
 		},
-		font: {
+		fonts: {
 			title: {
 				data: await (await fetch('/Mona-Sans-SemiBold.woff')).arrayBuffer(),
 				name: 'Mona Sans',
