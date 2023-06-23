@@ -13,6 +13,15 @@ export default async function banner({
 	layout = 'horizontal',
 	config,
 }) {
+	if (layout === 'horizontal') {
+		title = truncateText(title, 45);
+		subtitle = truncateText(subtitle, 100);
+	}
+	else {
+		title = truncateText(title, 90);
+		subtitle = truncateText(subtitle, 200);
+	}
+
 	const dimensions = {
 		width: 1000,
 		height: layout === 'horizontal' ? 180 : 680,
@@ -40,4 +49,9 @@ export default async function banner({
 		svg,
 		toString() { return svg; },
 	};
+}
+
+/** @type {(string: string, maxChar: number) => string} */
+function truncateText(string, maxChar) {
+	return string.length > maxChar ? `${string.slice(0, maxChar)}...` : string;
 }
