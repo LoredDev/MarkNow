@@ -4,12 +4,15 @@
  * Returns the html string of the banner to be used by satori.
  * Use the params to customize and complete it.
  *
+ * @typedef {import('satori').SatoriOptions['fonts'][0]} Font
+ *
  * @param {'vertical' | 'horizontal'} layout
  * @param {{width: number, height: number}} dimensions
+ * @param {{subtitle: Font, title: Font}} fonts
  *
  * @return {string}
  */
-export function generateBannerHtml(layout, dimensions) {
+export function generateBannerHtml(layout, dimensions, fonts) {
 	/** @type {boolean} */
 	const horizontal = layout === 'horizontal';
 
@@ -24,7 +27,6 @@ export function generateBannerHtml(layout, dimensions) {
 			<div style="
 					box-shadow: 0 5px 12px #00000040;
 					position: relative;
-					font-family: 'Mona Sans';
 					background-color: white;
 					margin: auto;
 					border-radius: 1em;
@@ -61,7 +63,8 @@ export function generateBannerHtml(layout, dimensions) {
 					<div style="display: flex; flex-direction: column;">
 						<h1 style="
 							margin: ${horizontal ? '0' : '0 0 1em 0'};
-							font-weight: 600;
+							font-weight:  ${fonts.title.weight};
+							font-family: ${fonts.title.name};
 							text-overflow: ellipsis;
 							max-width: 50em;
 							${horizontal ? 'text-align: start;' : 'text-align: center;'}
@@ -70,7 +73,8 @@ export function generateBannerHtml(layout, dimensions) {
 						</h1>
 						<sub style="
 							font-size: medium;
-							font-weight: 400;
+							font-weight:  ${fonts.subtitle.weight};
+							font-family: ${fonts.subtitle.name};
 							text-overflow: ellipsis;
 							max-width: 50em;
 							${horizontal ? 'text-align: start;' : 'text-align: center;'}

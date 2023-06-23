@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 /**
  * @param {import('./types').Reader | undefined} reader
  * @typedef {import('satori').SatoriOptions['fonts'][0]} Font
- * @returns {Promise<{regular: Font, bold: Font}>}
+ * @returns {Promise<{subtitle: Font, title: Font}>}
  */
 export async function getMonaSansFonts(reader) {
 	reader ||= (await import('node:fs/promises')).readFile;
@@ -13,13 +13,13 @@ export async function getMonaSansFonts(reader) {
 	const __dirname = dirname(__filename);
 
 	return {
-		regular: {
+		subtitle: {
 			name: 'Mona Sans',
 			weight: 400,
 			style: 'normal',
 			data: await reader(join(__dirname, './assets/Mona-Sans-Regular.woff')),
 		},
-		bold: {
+		title: {
 			name: 'Mona Sans',
 			weight: 600,
 			style: 'normal',

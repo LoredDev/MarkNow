@@ -15,6 +15,10 @@ export interface BannerOptions {
 	title: string,
 	subtitle?: string,
 	layout?: 'horizontal' | 'vertical' = 'horizontal',
+	font?: {
+		title: Font,
+		subtitle: Font,
+	},
 	libConfig?: {
 		reader?: Reader,
 	}

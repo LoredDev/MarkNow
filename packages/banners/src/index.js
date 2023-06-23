@@ -11,8 +11,14 @@ export default async function banner({
 	title,
 	subtitle = '',
 	layout = 'horizontal',
+	font: customFonts,
 	libConfig: config,
 }) {
+	const dimensions = {
+		width: 1000,
+		height: 180,
+	};
+
 	if (layout === 'horizontal') {
 		title = truncateText(title, 45);
 		subtitle = truncateText(subtitle, 100);
@@ -20,16 +26,12 @@ export default async function banner({
 	else {
 		title = truncateText(title, 90);
 		subtitle = truncateText(subtitle, 200);
+		dimensions.height = 680;
 	}
 
-	const dimensions = {
-		width: 1000,
-		height: layout === 'horizontal' ? 180 : 680,
-	};
+	const bannerFonts = customFonts ?? await getMonaSansFonts(config?.reader);
 
-	const bannerFonts = await getMonaSansFonts(config?.reader);
-
-	const html = generateBannerHtml(layout, dimensions)
+	const html = generateBannerHtml(layout, dimensions, bannerFonts)
 		.replace('%%MARKNOW-PLACEHOLDER-TITLE%%', title)
 		.replace('%%MARKNOW-PLACEHOLDER-SUBTILE%%', subtitle);
 
@@ -38,8 +40,8 @@ export default async function banner({
 	const svg = await satori(vNodes, {
 		...dimensions,
 		fonts: [
-			bannerFonts.bold,
-			bannerFonts.regular,
+			bannerFonts.title,
+			bannerFonts.subtitle,
 		],
 	});
 
