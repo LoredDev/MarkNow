@@ -5,6 +5,10 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 	const banner = await newBanner({
 		title: 'Hello world',
 		subtitle: 'This is a test!',
+		colors: {
+			background: '#000000',
+			foreground: '#ffffff',
+		},
 		font: {
 			title: {
 				data: await (await fetch('/Mona-Sans-SemiBold.woff')).arrayBuffer(),

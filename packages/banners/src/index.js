@@ -10,6 +10,10 @@ import { getMonaSansFonts } from './fonts';
 export default async function banner({
 	title,
 	subtitle = '',
+	colors = {
+		background: '#ffffff',
+		foreground: '#000000',
+	},
 	layout = 'horizontal',
 	font: customFonts,
 	libConfig: config,
@@ -31,7 +35,7 @@ export default async function banner({
 
 	const bannerFonts = customFonts ?? await getMonaSansFonts(config?.reader);
 
-	const html = generateBannerHtml(layout, dimensions, bannerFonts)
+	const html = generateBannerHtml(layout, dimensions, bannerFonts, colors)
 		.replace('%%MARKNOW-PLACEHOLDER-TITLE%%', title)
 		.replace('%%MARKNOW-PLACEHOLDER-SUBTILE%%', subtitle);
 

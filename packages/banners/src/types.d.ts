@@ -1,6 +1,15 @@
 import type { Abortable } from "node:events";
 import type { OpenMode, PathLike } from "node:fs";
 import type { FileHandle } from "node:fs/promises";
+import type { SatoriOptions } from "satori/wasm";
+
+export type Font = SatoriOptions['fonts'][0];
+
+export type Colors = {
+	foreground: string;
+	background: string;
+}
+
 
 export type Reader = (
 	path: PathLike | FileHandle,
@@ -14,11 +23,12 @@ export type Reader = (
 export interface BannerOptions {
 	title: string,
 	subtitle?: string,
-	layout?: 'horizontal' | 'vertical' = 'horizontal',
+	layout?: 'horizontal' | 'vertical',
 	font?: {
 		title: Font,
 		subtitle: Font,
-	},
+	}
+	colors?: Colors,
 	libConfig?: {
 		reader?: Reader,
 	}

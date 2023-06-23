@@ -9,10 +9,11 @@
  * @param {'vertical' | 'horizontal'} layout
  * @param {{width: number, height: number}} dimensions
  * @param {{subtitle: Font, title: Font}} fonts
+ * @param {import('./types').Colors} colors
  *
  * @return {string}
  */
-export function generateBannerHtml(layout, dimensions, fonts) {
+export function generateBannerHtml(layout, dimensions, fonts, colors) {
 	/** @type {boolean} */
 	const horizontal = layout === 'horizontal';
 
@@ -27,7 +28,8 @@ export function generateBannerHtml(layout, dimensions, fonts) {
 			<div style="
 					box-shadow: 0 5px 12px #00000040;
 					position: relative;
-					background-color: white;
+					color: ${colors.foreground};
+					background-color: ${colors.background};
 					margin: auto;
 					border-radius: 1em;
 					padding: ${horizontal ? '1.2' : '2.5'}em 2.5em;
