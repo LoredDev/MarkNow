@@ -23,6 +23,7 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 				style: 'normal',
 			},
 		},
+		rtl: true,
 	});
 
 	return new Response(`${banner.toString()}`, {

@@ -29,6 +29,7 @@ export interface BannerOptions {
 		subtitle: Font,
 	}
 	colors?: Colors,
+	rtl?: boolean,
 	libConfig?: {
 		reader?: Reader,
 	}

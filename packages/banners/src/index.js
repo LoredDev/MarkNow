@@ -16,6 +16,7 @@ export default async function banner({
 	},
 	layout = 'horizontal',
 	font: customFonts,
+	rtl = false,
 	libConfig: config,
 }) {
 	const dimensions = {
@@ -35,7 +36,9 @@ export default async function banner({
 
 	const bannerFonts = customFonts ?? await getMonaSansFonts(config?.reader);
 
-	const html = generateBannerHtml(layout, dimensions, bannerFonts, colors)
+	const htmlTemplate = generateBannerHtml({ layout, dimensions, fonts: bannerFonts, colors, rtl });
+
+	const html = htmlTemplate
 		.replace('%%MARKNOW-PLACEHOLDER-TITLE%%', title)
 		.replace('%%MARKNOW-PLACEHOLDER-SUBTILE%%', subtitle);
 

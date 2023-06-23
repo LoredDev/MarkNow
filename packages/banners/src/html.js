@@ -6,14 +6,24 @@
  *
  * @typedef {import('satori').SatoriOptions['fonts'][0]} Font
  *
- * @param {'vertical' | 'horizontal'} layout
- * @param {{width: number, height: number}} dimensions
- * @param {{subtitle: Font, title: Font}} fonts
- * @param {import('./types').Colors} colors
+ * @typedef {{
+ * layout: 'vertical' | 'horizontal',
+ * dimensions: { width: number, height: number }
+ * fonts: { title: Font, subtitle: Font }
+ * colors: import('./types').Colors
+ * rtl: boolean
+ * }} Props
+ * @param {Props} properties
  *
  * @return {string}
  */
-export function generateBannerHtml(layout, dimensions, fonts, colors) {
+export function generateBannerHtml({
+	layout,
+	dimensions,
+	colors,
+	fonts,
+	rtl,
+}) {
 	/** @type {boolean} */
 	const horizontal = layout === 'horizontal';
 
@@ -35,8 +45,10 @@ export function generateBannerHtml(layout, dimensions, fonts, colors) {
 					padding: ${horizontal ? '1.2' : '2.5'}em 2.5em;
 					display: flex;
 					${horizontal
-							? 'flex-direction: row;'
-							: 'flex-direction: column;'
+						? rtl
+							? 'flex-direction: row-reverse;'
+							: 'flex-direction: row;'
+						: 'flex-direction: column;'
 					}
 					align-items: center;
 					min-width: 98%;
@@ -69,7 +81,12 @@ export function generateBannerHtml(layout, dimensions, fonts, colors) {
 							font-family: ${fonts.title.name};
 							text-overflow: ellipsis;
 							max-width: 50em;
-							${horizontal ? 'text-align: start;' : 'text-align: center;'}
+							display: flex;
+							flex-direction: ${rtl ? 'row-reverse' : 'row'};
+							${horizontal
+								? 'text-align: start;'
+								: 'text-align: center;'
+							}
 						">
 							%%MARKNOW-PLACEHOLDER-TITLE%%
 						</h1>
@@ -79,7 +96,12 @@ export function generateBannerHtml(layout, dimensions, fonts, colors) {
 							font-family: ${fonts.subtitle.name};
 							text-overflow: ellipsis;
 							max-width: 50em;
-							${horizontal ? 'text-align: start;' : 'text-align: center;'}
+							display: flex;
+							flex-direction: ${rtl ? 'row-reverse' : 'row'};
+							${horizontal
+								? 'text-align: start;'
+								: 'text-align: center;'
+							}
 						">
 							%%MARKNOW-PLACEHOLDER-SUBTILE%%
 						</sub>
