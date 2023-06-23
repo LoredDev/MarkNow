@@ -11,7 +11,7 @@ export default async function banner({
 	title,
 	subtitle = '',
 	layout = 'horizontal',
-	config,
+	libConfig: config,
 }) {
 	if (layout === 'horizontal') {
 		title = truncateText(title, 45);
