@@ -19,7 +19,7 @@
 	"scripts": {
 		"build:cjs": "microbundle --compress false --pkg-main false --strict --tsconfig ./jsconfig.json --generateTypes false -f cjs --target node",
 		"build": "pnpm run build:cjs",
-		"dev": "microbundle -w --compress false"
+		"dev": "pnpm run build -w"
 	},
 	"dependencies": {
 		"satori": "^0.10.1",
