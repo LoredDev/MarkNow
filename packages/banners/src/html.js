@@ -51,6 +51,7 @@ export function generateBannerHtml({
 						: 'flex-direction: column;'
 					}
 					align-items: center;
+					justify-content: center;
 					min-width: 98%;
 					min-height: 20%;
 					gap: 1em;
@@ -76,17 +77,13 @@ export function generateBannerHtml({
 					">
 					<div style="display: flex; flex-direction: column;">
 						<h1 style="
-							margin: ${horizontal ? '0' : '0 0 1em 0'};
+							margin: ${horizontal ? '0' : '0 auto 1em auto'};
 							font-weight:  ${fonts.title.weight};
 							font-family: ${fonts.title.name};
 							text-overflow: ellipsis;
 							max-width: 50em;
 							display: flex;
 							flex-direction: ${rtl ? 'row-reverse' : 'row'};
-							${horizontal
-								? 'text-align: start;'
-								: 'text-align: center;'
-							}
 						">
 							%%MARKNOW-PLACEHOLDER-TITLE%%
 						</h1>
@@ -99,8 +96,8 @@ export function generateBannerHtml({
 							display: flex;
 							flex-direction: ${rtl ? 'row-reverse' : 'row'};
 							${horizontal
-								? 'text-align: start;'
-								: 'text-align: center;'
+								? 'margin: 0;'
+								: 'margin: 0 auto;'
 							}
 						">
 							%%MARKNOW-PLACEHOLDER-SUBTILE%%
