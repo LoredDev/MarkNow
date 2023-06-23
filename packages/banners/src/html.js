@@ -51,7 +51,10 @@ export function generateBannerHtml({
 						: 'flex-direction: column;'
 					}
 					align-items: center;
-					justify-content: center;
+					${horizontal
+						? 'justify-content: flex-start;'
+						: 'justify-content: center;'
+					}
 					min-width: 98%;
 					min-height: 20%;
 					gap: 1em;
