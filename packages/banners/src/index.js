@@ -31,7 +31,7 @@ export default async function banner({
 	else {
 		title = truncateText(title, 90);
 		subtitle = truncateText(subtitle, 200);
-		dimensions.height = 680;
+		dimensions.height = 1300;
 	}
 
 	const bannerFonts = customFonts ?? await getMonaSansFonts(config?.reader);
