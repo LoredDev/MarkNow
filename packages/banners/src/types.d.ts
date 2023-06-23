@@ -10,6 +10,10 @@ export type Colors = {
 	background: string;
 }
 
+export type Fetcher = (
+	input: RequestInfo | URL,
+	init?: RequestInit
+) => Promise<Response>;
 
 export type Reader = (
 	path: PathLike | FileHandle,
@@ -21,6 +25,7 @@ export type Reader = (
  * @package `@marknow/banners`
  */
 export interface BannerOptions {
+	icon?: string,
 	title: string,
 	subtitle?: string,
 	layout?: 'horizontal' | 'vertical',
@@ -31,7 +36,9 @@ export interface BannerOptions {
 	colors?: Colors,
 	rtl?: boolean,
 	libConfig?: {
+		fetcher?: Fetcher = fetch,
 		reader?: Reader,
+		iconHandler?: (icon: string) => string | Promise<string>
 	}
 }
 
@@ -42,8 +49,9 @@ export interface Banner {
 	toString(): string,
 	html: string,
 	svg: string,
+	icon: string,
 	vNodes: VNode,
-}
+};
 
 /**
  * **Copied from the satori-html package,**

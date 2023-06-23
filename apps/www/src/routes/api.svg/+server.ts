@@ -5,6 +5,7 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 	const banner = await newBanner({
 		title: 'Hello world',
 		subtitle: 'This is a test!',
+		icon: 'https://raw.githubusercontent.com/LoredDev/.github/main/assets/designs/dots-icon-dark.svg',
 		colors: {
 			background: '#000000',
 			foreground: '#ffffff',
@@ -23,7 +24,9 @@ export const GET = (async ({ fetch }): Promise<Response> => {
 				style: 'normal',
 			},
 		},
-		rtl: true,
+		libConfig: {
+			fetcher: fetch,
+		},
 	});
 
 	return new Response(`${banner.toString()}`, {
