@@ -86,13 +86,7 @@ export function setIconDimensions(svg, { width, height }) {
  * @access package
  */
 function isIconName(string) {
-	try {
-		const [collection, icon] = string.split(':');
-		return Boolean(collection) && Boolean(icon);
-	}
-	catch (_) {
-		return false;
-	}
+	return /^[a-z0-9-]+:[a-z0-9-]+(\[\])?$/.test(string);
 }
 
 /**
