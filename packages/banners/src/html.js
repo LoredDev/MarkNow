@@ -17,14 +17,13 @@
  *
  * @return {string}
  */
-export function generateBannerHtml({
-	layout,
+export default function html({
 	dimensions,
+	layout,
 	colors,
 	fonts,
 	rtl,
 }) {
-	/** @type {boolean} */
 	const horizontal = layout === 'horizontal';
 
 	return `

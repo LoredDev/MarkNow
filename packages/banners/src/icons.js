@@ -5,20 +5,36 @@
  * @return {Promise<string>}
  */
 export async function getIcon(icon, fetcher = fetch) {
-	if ((!isIconName(icon) && !isValidUrl(icon))) {
+	if (!isIconName(icon) && !isValidUrl(icon)) {
 		return icon;
 	}
 	else if (isValidUrl(icon)) {
 		const svg = (await fetcher(icon)).text();
-
-		return setIconDimensions(await svg);
+		return svg;
 	}
 
 	const [collection, iconName] = icon.split(':');
-
 	const svg = (await fetcher(`https://api.iconify.design/${collection}/${iconName}.svg`)).text();
 
-	return setIconDimensions(await svg);
+	return svg;
+}
+
+export function setIconDimensions(svg, { width, height }) {
+	width = typeof width === 'number'
+		? `width="${width}px"`
+		: !width
+			? ''
+			: `width="${width}"`;
+
+	height = typeof height === 'number'
+		? `height="${height}px"`
+		: !height
+			? ''
+			: `height="${height}"`;
+
+	return svg
+		.replace(/width="([^"]*)"/, width)
+		.replace(/height="([^"]*)"/, height);
 }
 
 /**
@@ -27,9 +43,9 @@ export async function getIcon(icon, fetcher = fetch) {
  * @param {string} iconName
  * @return {boolean}
  */
-function isIconName(iconName) {
+function isIconName(string) {
 	try {
-		const [collection, icon] = iconName.split(':');
+		const [collection, icon] = string.split(':');
 		return Boolean(collection) && Boolean(icon);
 	}
 	catch (_) {
@@ -49,14 +65,4 @@ function isValidUrl(string) {
 	catch (_) {
 		return false;
 	}
-}
-
-/**
- * @param {string} svg
- * @return {string}
- */
-function setIconDimensions(svg) {
-	return svg
-		.replace(/width="([^"]*)"/, 'width="3.5em"')
-		.replace(/height="([^"]*)"/, '');
 }

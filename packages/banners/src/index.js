@@ -1,8 +1,8 @@
 import { html as htmlToVNodes } from 'satori-html';
 import satori from 'satori';
-import { generateBannerHtml } from './html';
+import bannerHtml from './html';
 import { getMonaSansFonts } from './fonts';
-import { getIcon } from './icons';
+import { getIcon, setIconDimensions } from './icons';
 
 /**
  * @param {import('./types').BannerOptions} options
@@ -10,19 +10,20 @@ import { getIcon } from './icons';
  */
 export default async function banner({
 	title,
-	subtitle = '',
+	fonts,
 	icon = '',
+	rtl = false,
+	subtitle = '',
 	layout = 'horizontal',
+	libConfig: config = {},
 	colors = {
 		background: '#ffffff',
 		foreground: '#000000',
 	},
-	libConfig: config = {},
-	fonts,
-	rtl = false,
 }) {
-	config.iconHandler ||= icon => getIcon(icon, config?.fetcher);
 	fonts ||= await getMonaSansFonts(config?.reader);
+	config.iconHandler ||= icon => getIcon(icon, config?.fetcher);
+
 	title = truncateText(title, layout === 'horizontal' ? 45 : 90);
 	subtitle = truncateText(subtitle, layout === 'horizontal' ? 100 : 200);
 
@@ -31,9 +32,9 @@ export default async function banner({
 		height: layout === 'horizontal' ? 180 : 1300,
 	};
 
-	const htmlTemplate = generateBannerHtml({ layout, dimensions, fonts, colors, rtl });
+	const htmlTemplate = bannerHtml({ layout, dimensions, fonts, colors, rtl });
 
-	const iconSvg = await config.iconHandler(icon);
+	const iconSvg = setIconDimensions(await config.iconHandler(icon), { width: '3.5em' });
 
 	const html = htmlTemplate
 		.replace('%%MARKNOW-PLACEHOLDER-TITLE%%', title)
@@ -51,11 +52,11 @@ export default async function banner({
 	});
 
 	return {
-		html,
-		vNodes,
-		svg,
-		icon: iconSvg,
 		toString() { return svg; },
+		icon: iconSvg,
+		vNodes,
+		html,
+		svg,
 	};
 }
 
