@@ -17,9 +17,12 @@
 	"module": "./src/index.js",
 	"types": "./src/index.d.ts",
 	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest watch",
 		"build:cjs": "microbundle --compress false --pkg-main false --strict --tsconfig ./jsconfig.json --generateTypes false -f cjs --target node",
 		"build": "pnpm run build:cjs",
-		"dev": "pnpm run build -w"
+		"dev": "pnpm run build -w",
+		"lint": "eslint ."
 	},
 	"dependencies": {
 		"satori": "^0.10.1",

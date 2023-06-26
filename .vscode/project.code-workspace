@@ -5,6 +5,10 @@
 			"name": "apps/www"
 		},
 		{
+			"path": "../packages/banners",
+			"name": "@marknow/banners"
+		},
+		{
 			"path": "../",
 			"name": "ROOT"
 		}

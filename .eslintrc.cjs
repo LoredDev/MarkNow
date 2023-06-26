@@ -231,6 +231,8 @@ module.exports = {
 				'lored',
 				'guz013',
 				'xml',
+				'jsconfig',
+				'vitest',
 			],
 			minLength: 4,
 		}],
