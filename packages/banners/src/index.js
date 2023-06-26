@@ -85,7 +85,7 @@ export default async function banner({
 
 	const dimensions = {
 		width: 1000,
-		height: layout === 'horizontal' ? 180 : 1300,
+		height: layout === 'horizontal' ? 180 : 280,
 	};
 
 	const htmlTemplate = bannerHtml({ layout, dimensions, fonts, colors, rtl });
