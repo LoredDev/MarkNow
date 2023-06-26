@@ -1,8 +1,20 @@
 /**
- * @param {string} icon
- * @param {import('./types').Fetcher | undefined} fetcher
+/**
+ * Utility function used to get a SVG icon from Iconify OR from an url passed as the icon.
  *
- * @return {Promise<string>}
+ * If the `icon` parameter is not a valid icon name or url,
+ * it returns the `icon` itself.
+ *
+ * @param {string} icon
+ * The icon's name or url endpoint.
+ *
+ * @param {import('./types').Fetcher | undefined} [fetcher=globalThis.fetch]
+ * Fetch function to be used.
+ *
+ * @returns {Promise<string>}
+ *
+ * @module \@marknow/banners
+ * @access protected
  */
 export async function getIcon(icon, fetcher = fetch) {
 	if (!isIconName(icon) && !isValidUrl(icon)) {
@@ -19,6 +31,20 @@ export async function getIcon(icon, fetcher = fetch) {
 	return svg;
 }
 
+/**
+ * Utility function used to set the icons SVG width and height to the specified dimensions.
+ *
+ * @param {string} svg
+ * The svg string.
+ *
+ * @param {{width?: string | number, height?: string | number}} dimensions
+ * The dimensions values, if type number it is converted to pixels.
+ *
+ * @returns {string}
+ *
+ * @module \@marknow/banners
+ * @access protected
+ */
 export function setIconDimensions(svg, { width, height }) {
 	width = typeof width === 'number'
 		? `width="${width}px"`
@@ -38,10 +64,14 @@ export function setIconDimensions(svg, { width, height }) {
 }
 
 /**
- * Checks if a given string is a valid [Iconify](https://iconify.design/)/[Icônes](https://icones.js.org/)-like icon name.
+ * Checks if a given string is a valid
+ * [Iconify](https://iconify.design/)/[Icônes](https://icones.js.org/)-like icon name.
  *
- * @param {string} iconName
- * @return {boolean}
+ * @param {string} string The string to be checked.
+ * @returns {boolean}
+ *
+ * @module \@marknow/banners
+ * @access package
  */
 function isIconName(string) {
 	try {
@@ -54,8 +84,13 @@ function isIconName(string) {
 }
 
 /**
- * @param {string} string
- * @return {boolean}
+ * Checks if string is a valid URL.
+ *
+ * @param {string} string The string to be checked.
+ * @returns {boolean}
+ *
+ * @module \@marknow/banners
+ * @access package
  */
 function isValidUrl(string) {
 	try {

@@ -1,11 +1,10 @@
 /* eslint-disable complexity */
 /* eslint-disable @typescript-eslint/indent */
 /**
- * Returns the html string of the banner to be used by satori.
- * Use the params to customize and complete it.
+ * Constructor of the HTML banner converted to VNodes to be used in satori.
+ * Use the properties to customize and complete it.
  *
  * @typedef {import('satori').SatoriOptions['fonts'][0]} Font
- *
  * @typedef {{
  *   dimensions: { width: number, height: number },
  *   fonts: { title: Font, subtitle: Font },
@@ -14,8 +13,12 @@
  *   rtl: boolean,
  * }} Props
  * @param {Props} properties
+ * Properties to be applied on the html.
  *
- * @return {string}
+ * @returns {string}
+ *
+ * @module \@marknow/banners
+ * @access protected
  */
 export default function html({
 	dimensions,
