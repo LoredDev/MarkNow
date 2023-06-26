@@ -1,0 +1,35 @@
+{
+	"name": "@marknow/banners",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "",
+	"source": "./src/index.js",
+	"author": "",
+	"license": "ISC",
+	"keywords": [],
+	"exports": {
+		"types": "./src/index.d.ts",
+		"require": "./dist/index.cjs",
+		"import": "./src/index.js",
+		"default": "./src/index.js"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./src/index.js",
+	"types": "./src/index.d.ts",
+	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest watch",
+		"build:cjs": "microbundle --compress false --pkg-main false --strict --tsconfig ./jsconfig.json --generateTypes false -f cjs --target node",
+		"build": "pnpm run build:cjs",
+		"dev": "pnpm run build -w",
+		"lint": "eslint ."
+	},
+	"dependencies": {
+		"satori": "^0.10.1",
+		"satori-html": "^0.3.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.3.1",
+		"microbundle": "^0.15.1"
+	}
+}

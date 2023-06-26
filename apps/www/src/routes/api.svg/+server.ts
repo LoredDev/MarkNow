@@ -1,33 +1,35 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import satori from 'satori';
-import { html as satoriHtml } from 'satori-html';
-import Banner from './Banner.html?raw';
-import font400 from '$lib/assets/Mona-Sans-Regular.woff?url';
-import font600 from '$lib/assets/Mona-Sans-SemiBold.woff?url';
+import newBanner from '@marknow/banners';
 
 export const GET = (async ({ fetch }): Promise<Response> => {
-	const html = satoriHtml(Banner);
+	const banner = await newBanner({
+		title: 'Hello world',
+		subtitle: 'This is a test!',
+		icon: 'solar:hand-shake-bold-duotone',
+		colors: {
+			background: '#000000',
+			foreground: '#ffffff',
+		},
+		fonts: {
+			title: {
+				data: await (await fetch('/Mona-Sans-SemiBold.woff')).arrayBuffer(),
+				name: 'Mona Sans',
+				weight: 600,
+				style: 'normal',
+			},
+			subtitle: {
+				data: await (await fetch('/Mona-Sans-Regular.woff')).arrayBuffer(),
+				name: 'Mona Sans',
+				weight: 400,
+				style: 'normal',
+			},
+		},
+		libConfig: {
+			fetcher: fetch,
+		},
+	});
 
-	const banner = await satori(html,
-		{
-			width: 1000,
-			height: 180,
-			fonts: [
-				{
-					name: 'Mona Sans',
-					weight: 400,
-					style: 'normal',
-					data: await (await fetch(font400)).arrayBuffer(),
-				},
-				{
-					name: 'Mona Sans',
-					weight: 600,
-					style: 'normal',
-					data: await (await fetch(font600)).arrayBuffer(),
-				}],
-		});
-
-	return new Response(banner, {
+	return new Response(`${banner.toString()}`, {
 		status: 200,
 		headers: {
 			'Content-type': 'image/svg+xml',
