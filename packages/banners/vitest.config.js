@@ -5,6 +5,6 @@ export default defineProject({
 		environmentMatchGlobs: [
 			['**\/*{,.node}.test.{js,ts}', 'node'],
 		],
-		include: ['./tests/**/*.test.js'],
+		include: ['./tests/**/*.test.{js,ts}'],
 	},
 });
