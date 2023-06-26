@@ -1,4 +1,16 @@
 /**
+ * @file
+ * Utility functions used to retrieve and manipulate icons SVG strings.
+ *
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ *
+ * @module \@marknow/banners
+ */
+
 /**
  * Utility function used to get a SVG icon from Iconify OR from an url passed as the icon.
  *

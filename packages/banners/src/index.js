@@ -1,3 +1,18 @@
+/**
+ * @file
+ * Main entry point of the `@marknow/banners` package. This file contains
+ * all ESModules exports of the public APIs and functions of the library.
+ * Anything exported here should have an @access public access level and
+ * declared on {@link ./index.d.ts types declaration} file.
+ *
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ *
+ * @module \@marknow/banners
+ */
 import { html as htmlToVNodes } from 'satori-html';
 import satori from 'satori';
 import bannerHtml from './html';

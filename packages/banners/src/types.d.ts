@@ -1,4 +1,16 @@
-import type { Abortable } from "node:events";
+/**
+ * @file
+ * Definitions of more complex or shared Typescript types used in the package.
+ *
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ *
+ * @module \@marknow/banners
+ */
+
 import type { OpenMode, PathLike } from "node:fs";
 import type { FileHandle } from "node:fs/promises";
 import type { SatoriOptions } from "satori/wasm";

@@ -1,3 +1,11 @@
+/**
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ */
+
 /* eslint-disable complexity */
 /* eslint-disable @typescript-eslint/indent */
 /**

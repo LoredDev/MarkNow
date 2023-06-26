@@ -1,4 +1,20 @@
 /**
+ * @file
+ * This file contains all public functions and types declaration of the
+ * `@marknow/banners` package. Anything declared here can be accessed directly
+ * by the library consumers and has an @access public access level.
+ *
+ * The JSDocs of the functions are duplicated from the source files, so that
+ * it is more compatible with Typescript syntax and code documentation.
+ *
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ *
+ * @module \@marknow/banners
+ */
 
 /**
  * The banner constructor function. Use the options to customize the

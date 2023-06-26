@@ -1,3 +1,16 @@
+/**
+ * @file
+ * Utility functions used to retrieve and manipulate fonts' objects.
+ *
+ * @author
+ * Guz013 (under the Lored organization) <https://github.com/LoredDev>
+ *
+ * @copyright
+ * Gustavo "Guz013" L. de Mello
+ *
+ * @module \@marknow/banners
+ */
+
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
