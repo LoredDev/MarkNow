@@ -23,7 +23,7 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/pnpm-setup
 
-      - name: Run tests
+      - name: Run ESLint
         run: pnpm run lint
   vitest:
     env:
@@ -39,5 +39,5 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/pnpm-setup
 
-      - name: Run tests
+      - name: Run Vitests
         run: pnpm run test
