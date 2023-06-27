@@ -2,10 +2,10 @@
 	"name": "@marknow/banners",
 	"type": "module",
 	"version": "1.0.0",
+	"private": false,
 	"description": "",
 	"source": "./src/index.js",
 	"author": "",
-	"license": "ISC",
 	"keywords": [],
 	"exports": {
 		"types": "./src/index.d.ts",
