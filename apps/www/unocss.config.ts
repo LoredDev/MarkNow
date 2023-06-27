@@ -36,15 +36,11 @@ export default defineConfig({
 		presetWebFonts({
 			fonts: {
 				sans: {
-					name: 'Inter',
+					name: 'Mona Sans',
 					provider: 'none',
 				},
 				code: {
 					name: 'Fira Code',
-					provider: 'none',
-				},
-				cal: {
-					name: 'Cal Sans',
 					provider: 'none',
 				},
 			},

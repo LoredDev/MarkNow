@@ -14,8 +14,7 @@ export default defineConfig({
 	plugins: [
 		SvelteImport({
 			include: [
-				/\.svelte/,
-				/\.svelte\?svelte/,
+				/\.svelte$/,
 			],
 			external: [
 				...findPathsByExtension(path.join(__dirname, 'src'), '.svx').map((filePath) => {
@@ -47,21 +46,18 @@ export default defineConfig({
 				}),
 			],
 			dirs: [
-				'./src/**/*',
+				'./src/lib',
 			],
 			importPathTransform: (importPath) => {
 				if (path.extname(importPath) === '.svg')
 					return `${importPath}?component`;
-				if (getFileName(importPath).startsWith('+'))
-					return '';
 				else return importPath;
 			},
 			dts: './src/lib/components.d.ts',
 		}),
 		AutoImport({
 			include: [
-				/\.svelte/,
-				/\.svelte\?svelte/,
+				/\.svelte$/,
 				/.[tj]sx?$/,
 			],
 			imports: [

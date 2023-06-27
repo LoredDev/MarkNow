@@ -1,19 +1,19 @@
 import adapter from '@sveltejs/adapter-vercel';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import sveltePreprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import rhExternalLinks from 'rehype-external-links';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.svx', '.md'],
-	preprocess: [vitePreprocess(), mdsvex({
+	preprocess: [sveltePreprocess(), mdsvex({
 		rehypePlugins: [
 			[rhExternalLinks, {
 				target: '_blank',
 				rel: ['nofollow', 'noopener', 'noreferrer'],
 			}],
 		],
-		extensions: ['.svelte', '.svx', '.md'],
+		extensions: ['.svx', '.md'],
 	})],
 	kit: {
 		adapter: adapter(),
