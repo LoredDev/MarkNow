@@ -17,7 +17,7 @@
 		"build:pkg": "turbo run build --filter='./packages/*'",
 		"dev": "turbo run dev --filter=\"@marknow/www\"",
 		"preview": "turbo run preview --filter=\"@marknow/www\"",
-		"release": "pnpm run build:pkg && changesets publish --access public"
+		"release": "pnpm run build:pkg && changeset publish --access public"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^0.39.5",
