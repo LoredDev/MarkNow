@@ -14,6 +14,9 @@
  * Gustavo "Guz013" L. de Mello
  *
  * @module \@marknow/banners
+ *
+ * @lincese
+ * MIT OR Apache-2.0
  */
 
 /**

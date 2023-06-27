@@ -4,6 +4,9 @@
  *
  * @copyright
  * Gustavo "Guz013" L. de Mello
+ *
+ * @license
+ * MIT OR Apache-2.0
  */
 
 /* eslint-disable complexity */

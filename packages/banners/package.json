@@ -2,10 +2,18 @@
 	"name": "@marknow/banners",
 	"type": "module",
 	"version": "1.0.0",
-	"description": "",
+	"private": false,
 	"source": "./src/index.js",
-	"author": "",
-	"license": "ISC",
+	"description": "",
+	"license": "MIT OR Apache-2.0",
+	"homepage": "https://github.com/LoredDev/MarkNow/tree/main#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LoredDev/MarkNow.git#main"
+	},
+	"bugs": {
+		"url": "https://github.com/LoredDev/MarkNow/issues"
+	},
 	"keywords": [],
 	"exports": {
 		"types": "./src/index.d.ts",
@@ -31,5 +39,8 @@
 	"devDependencies": {
 		"@types/node": "^20.3.1",
 		"microbundle": "^0.15.1"
+	},
+	"directories": {
+		"test": "tests"
 	}
 }
