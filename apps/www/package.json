@@ -15,7 +15,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint ."
+		"lint": "pnpm run check && eslint ."
 	},
 	"devDependencies": {
 		"@fontsource-variable/fira-code": "^5.0.3",
