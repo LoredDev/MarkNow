@@ -5,6 +5,7 @@
 	"private": false,
 	"source": "./src/index.js",
 	"description": "",
+	"license": "MIT OR Apache-2.0",
 	"homepage": "https://github.com/LoredDev/MarkNow/tree/main#readme",
 	"repository": {
 		"type": "git",

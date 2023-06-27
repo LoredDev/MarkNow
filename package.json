@@ -1,12 +1,12 @@
 {
 	"name": "marknow",
 	"version": "0.0.0",
+	"private": true,
 	"packageManager": "pnpm@8.0.0",
 	"description": "",
 	"author": "",
-	"license": "ISC",
+	"license": "MIT OR Apache-2.0",
 	"keywords": [],
-	"main": "index.js",
 	"scripts": {
 		"test": "turbo run test",
 		"test:watch": "vitest watch",
@@ -17,7 +17,7 @@
 		"build:pkg": "turbo run build --filter='./packages/*'",
 		"dev": "turbo run dev --filter=\"@marknow/www\"",
 		"preview": "turbo run preview --filter=\"@marknow/www\"",
-		"release": "pnpm run build:pkg && changesets publish"
+		"release": "pnpm run build:pkg && changesets publish --access public"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^0.39.5",
