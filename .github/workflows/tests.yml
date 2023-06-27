@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  setup-pnpm:
+  vitest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
