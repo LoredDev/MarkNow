@@ -14,8 +14,10 @@
 		"lint": "eslint . && turbo run lint",
 		"lint:fix": "eslint . --fix && turbo run lint -- --fix",
 		"build": "turbo run build --filter=\"@marknow/www\"",
+		"build:pkg": "turbo run build --filter='./packages/*'",
 		"dev": "turbo run dev --filter=\"@marknow/www\"",
-		"preview": "turbo run preview --filter=\"@marknow/www\""
+		"preview": "turbo run preview --filter=\"@marknow/www\"",
+		"release": "pnpm run build:pkg && changesets publish"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^0.39.5",
