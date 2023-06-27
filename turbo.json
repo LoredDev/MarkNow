@@ -4,7 +4,7 @@
 		"build": {
 			"dependsOn": [
 				"^test",
-				"test"
+				"^build"
 			],
 			"outputs": [
 				"dist/**"
@@ -13,15 +13,10 @@
 		"lint": {},
 		"test": {
 			"dependsOn": [
-				"^lint",
-				"lint"
+				"build"
 			]
 		},
 		"test:watch": {
-			"dependsOn": [
-				"^lint",
-				"lint"
-			],
 			"persistent": true
 		},
 		"dev": {
@@ -33,7 +28,8 @@
 		},
 		"preview": {
 			"dependsOn": [
-				"^build"
+				"^build",
+				"build"
 			],
 			"persistent": true
 		}
