@@ -47,6 +47,7 @@ export default defineConfig({
 			],
 			dirs: [
 				'./src/lib',
+				'./src/routes',
 			],
 			importPathTransform: (importPath) => {
 				if (path.extname(importPath) === '.svg')
@@ -69,7 +70,7 @@ export default defineConfig({
 				'svelte/transition',
 			],
 			dirs: [
-				'./src/**/*',
+				'./src/lib/*',
 			],
 			dts: './src/lib/imports.d.ts',
 			eslintrc: {

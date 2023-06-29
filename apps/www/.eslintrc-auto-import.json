@@ -62,7 +62,6 @@
     "Banner": true,
     "load": true,
     "data": true,
-    "PageData": true,
-    "GET": true
+    "PageData": true
   }
 }
