@@ -9,6 +9,7 @@ on:
 
 jobs:
   deploy:
+    if: github.repository == 'loreddev/marknow'
     uses: loreddev/.github/.github/workflows/vercel-deploy.yml@main
     secrets: inherit
     with:
