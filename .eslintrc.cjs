@@ -233,6 +233,7 @@ module.exports = {
 				'xml',
 				'jsconfig',
 				'vitest',
+				'matcher',
 			],
 			minLength: 4,
 		}],

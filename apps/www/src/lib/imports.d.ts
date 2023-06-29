@@ -5,7 +5,6 @@
 export {}
 declare global {
   const Banner: typeof import('./Banner')['default']
-  const GET: typeof import('../routes/api.svg/+server')['GET']
   const afterUpdate: typeof import('svelte')['afterUpdate']
   const backIn: typeof import('svelte/easing')['backIn']
   const backInOut: typeof import('svelte/easing')['backInOut']
@@ -41,7 +40,6 @@ declare global {
   const getContext: typeof import('svelte')['getContext']
   const hasContext: typeof import('svelte')['hasContext']
   const linear: typeof import('svelte/easing')['linear']
-  const load: typeof import('../routes/+page')['load']
   const onDestroy: typeof import('svelte')['onDestroy']
   const onMount: typeof import('svelte')['onMount']
   const quadIn: typeof import('svelte/easing')['quadIn']
