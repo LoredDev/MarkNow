@@ -1,7 +1,10 @@
 name: 🎉 Release
 
 on:
-  push:
+  workflow_run:
+    workflows: [🧪 Code checking]
+    types:
+      - completed
     branches:
       - main
 
@@ -9,11 +12,13 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    if: github.repository == 'loreddev/marknow'
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.repository == 'loreddev/marknow' }}
     permissions:
       contents: write
       pull-requests: write
     name: Release
+    env:
+      HUSKY_SKIP_HOOKS: true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,6 +33,8 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm release
+          commit: 'chore: 🔗🦋 version packages'
+          title: '🦋 Changeset: Version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
