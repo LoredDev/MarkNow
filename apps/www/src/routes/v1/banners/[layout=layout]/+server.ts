@@ -13,8 +13,8 @@ export const GET = (async ({ params, url, fetch }) => {
 	const rtl: boolean = url.searchParams.get('rtl') !== 'false' && url.searchParams.get('rtl') !== null;
 
 	const colors: BannerOptions['colors'] = {
-		foreground: url.searchParams.get('foreground') ?? '#000000',
-		background: url.searchParams.get('background') ?? '#ffffff',
+		foreground: `#${url.searchParams.get('foreground') ?? '000000'}`,
+		background: `#${url.searchParams.get('background') ?? 'ffffff'}`,
 	};
 
 	const banner = await createBanner({
