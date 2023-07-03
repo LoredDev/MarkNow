@@ -28,10 +28,12 @@ export const GET = (async ({ params, url, fetch }) => {
 			title: {
 				data: await (await fetch('/Mona-Sans-SemiBold.woff')).arrayBuffer(),
 				name: 'Mona Sans',
+				weight: 600,
 			},
 			subtitle: {
 				data: await (await fetch('/Mona-Sans-Regular.woff')).arrayBuffer(),
 				name: 'Mona Sans',
+				weight: 400,
 			},
 		},
 		libConfig: {
