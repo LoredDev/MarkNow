@@ -234,6 +234,8 @@ module.exports = {
 				'jsconfig',
 				'vitest',
 				'matcher',
+				'minimalistic',
+				'xmlns',
 			],
 			minLength: 4,
 		}],

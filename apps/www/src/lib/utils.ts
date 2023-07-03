@@ -1,0 +1,17 @@
+/**
+ * @author Taylor Hunt
+ * @see {@link https://codepen.io/tigt/post/optimizing-svgs-in-data-uris}
+ * @see {@link https://gist.github.com/jennyknuth/222825e315d45a738ed9d6e04c7a88d0}
+ */
+export function encodeSvg(svg: string) {
+	return svg.replace('<svg', (~svg.indexOf('xmlns') ? '<svg' : '<svg xmlns="http://www.w3.org/2000/svg"'))
+		.replace(/"/g, '\'')
+		.replace(/%/g, '%25')
+		.replace(/#/g, '%23')
+		.replace(/{/g, '%7B')
+		.replace(/}/g, '%7D')
+		.replace(/</g, '%3C')
+		.replace(/>/g, '%3E')
+
+		.replace(/\s+/g, ' ');
+}
