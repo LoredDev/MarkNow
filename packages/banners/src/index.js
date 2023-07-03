@@ -67,7 +67,7 @@ import { getIcon, setIconDimensions } from './icons';
  * @module \@marknow/banners
  * @access public
  */
-export default async function banner({
+export async function banner({
 	title,
 	fonts,
 	icon = '',
@@ -133,3 +133,5 @@ export default async function banner({
 function truncateText(string, maxChar) {
 	return string.length > maxChar ? `${string.slice(0, maxChar)}...` : string;
 }
+
+export { bannerHtml, getIcon, setIconDimensions, banner as default, truncateText };
