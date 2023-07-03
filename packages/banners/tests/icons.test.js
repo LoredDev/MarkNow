@@ -6,7 +6,7 @@ describe('Iconify icons', async () => {
 		const result = await banner({
 			title: 'Hello World',
 			subtitle: 'This is a test',
-			// eslint-disable-next-line spellcheck/spell-checker
+
 			icon: 'solar:test-tube-minimalistic-bold-duotone',
 		});
 		expect(result.toString()).toMatchFileSnapshot('./__snapshots__/icons-withIconifyIcon.svg');

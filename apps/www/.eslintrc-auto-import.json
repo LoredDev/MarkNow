@@ -35,6 +35,7 @@
     "linear": true,
     "onDestroy": true,
     "onMount": true,
+    "pastSvg": true,
     "quadIn": true,
     "quadInOut": true,
     "quadOut": true,
@@ -55,13 +56,6 @@
     "tick": true,
     "tweened": true,
     "writable": true,
-    "csr": true,
-    "ssr": true,
-    "render": true,
-    "banner": true,
-    "Banner": true,
-    "load": true,
-    "data": true,
-    "PageData": true
+    "encodeSvg": true
   }
 }

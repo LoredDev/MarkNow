@@ -29,7 +29,7 @@
  * @returns {string}
  *
  * @module \@marknow/banners
- * @access protected
+ * @access public
  */
 export default function html({
 	dimensions,

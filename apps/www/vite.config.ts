@@ -46,7 +46,7 @@ export default defineConfig({
 				}),
 			],
 			dirs: [
-				'./src/lib',
+				'./src/lib/components',
 				'./src/routes',
 			],
 			importPathTransform: (importPath) => {

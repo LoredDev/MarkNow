@@ -14,9 +14,6 @@
  * MIT OR Apache-2.0
  */
 
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 /**
  * @param {import('./types').Reader | undefined} [reader=import('node:fs').readFile]
  * The function to be used as reader of the local files.
@@ -28,6 +25,8 @@ import { fileURLToPath } from 'node:url';
  * @access protected
  */
 export async function getMonaSansFonts(reader) {
+	const { dirname, join } = await import('node:path');
+	const { fileURLToPath } = await import('node:url');
 	reader ||= (await import('node:fs/promises')).readFile;
 
 	const __filename = fileURLToPath(import.meta.url);

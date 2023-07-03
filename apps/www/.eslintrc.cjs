@@ -5,5 +5,6 @@ module.exports = {
 	],
 	rules: {
 		'@typescript-eslint/no-throw-literal': 'off',
+		'import/default': 'warn',
 	},
 };

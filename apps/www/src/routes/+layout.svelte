@@ -4,6 +4,13 @@
 	import '../app.css';
 </script>
 
-<div un-bg="#0d1117">
+<main
+	un-w="screen"
+	un-h="screen"
+	un-bg="black"
+	un-text="white"
+	un-font="sans"
+	un-flex="~ justify-center items-center"
+>
 	<slot />
-</div>
+</main>
