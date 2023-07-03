@@ -29,7 +29,7 @@
  * @returns {Promise<string>}
  *
  * @module \@marknow/banners
- * @access protected
+ * @access public
  */
 export async function getIcon(icon, fetcher = fetch) {
 	if (!isIconName(icon) && !isValidUrl(icon)) {
