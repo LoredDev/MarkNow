@@ -112,12 +112,12 @@
 			<input
 				un-m="l-5"
 				type="checkbox"
-				name="vertical layout"
-				id="vertical-input"
+				name="right to left"
+				id="rtl-input"
 				bind:checked={isRtl}
 				on:input={() => ($id = Math.random())}
 			/>
-			<label un-text="sm" for="vertical-input">Right-to-Left</label>
+			<label un-text="sm" for="rtl-input">Right-to-Left</label>
 		</div>
 	</section>
 	<section un-flex="~ col">
