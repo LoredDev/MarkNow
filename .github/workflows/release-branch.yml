@@ -4,12 +4,17 @@ on:
   push:
     branches:
       - dev
+  pull_request:
+    branches:
       - main
+    types:
+      - closed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   update-release:
+    if: github.ref_name == 'dev'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,8 +43,20 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update dev branch
-        if: steps.changesets.outputs.hasChangesets == 'false'
+  update-dev:
+    if: github.ref_name == 'main' && github.event.pull_request.merged == true && github.event.pull_request.title == '🦋 Release branch'
+    runs-on: ubuntu-latest
+    name: Update dev branch
+    timeout-minutes: 2
+    env:
+      HUSKY: 0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Release to dev
         uses: devmasx/merge-branch@master
         with:
           type: now
