@@ -2,7 +2,9 @@ name: 👷 Release preview
 
 on:
   workflow_run:
-    workflows: [🧪 Code checking, 🦋 Release branch]
+    workflows:
+      - 🧪 Code checking
+      - 🦋 Release branch
     types:
       - completed
     branches:

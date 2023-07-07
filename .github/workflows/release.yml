@@ -2,7 +2,8 @@ name: 🎉 Release
 
 on:
   workflow_run:
-    workflows: [🧪 Code checking]
+    workflows:
+      - 🧪 Code checking
     types:
       - completed
     branches:
