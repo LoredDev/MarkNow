@@ -3,7 +3,7 @@ name: ▲ Deploy preview
 on:
   push:
     branches:
-      - dev
+      - changeset-release/main
   pull_request:
     types: [opened, synchronize, reopened]
 
