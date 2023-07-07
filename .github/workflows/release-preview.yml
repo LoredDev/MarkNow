@@ -1,4 +1,4 @@
-name: 🎉 Release
+name: 👷 Release preview
 
 on:
   workflow_run:
@@ -6,15 +6,12 @@ on:
     types:
       - completed
     branches:
-      - main
+      - dev
 
 jobs:
   release:
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.repository == 'loreddev/marknow' }}
-    permissions:
-      contents: write
-      pull-requests: write
-    name: Release
+    name: Release preview
     env:
       HUSKY: 0
     runs-on: ubuntu-latest
@@ -27,7 +24,10 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/pnpm-setup
 
+      - name: Update versions
+        run: pnpm changeset version --snapshot next
+
       - name: Release packages
-        run: pnpm run release
+        run: pnpm run release --tag next
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
