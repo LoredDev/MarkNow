@@ -42,5 +42,8 @@
 	},
 	"directories": {
 		"test": "tests"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }

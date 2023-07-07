@@ -1,8 +1,10 @@
-name: ▲ Deploy to Vercel
+name: ▲ Deploy
 
 on:
   workflow_run:
-    workflows: [🧪 Code checking, 🎉 Release]
+    workflows:
+      - 🧪 Code checking
+      - 🎉 Release
     types:
       - completed
     branches:

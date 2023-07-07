@@ -5,8 +5,16 @@ on:
     branches:
       - dev
       - main
+      - changeset-release/main
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+      - dev
+      - main
+      - changeset-release/main
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   linting:
