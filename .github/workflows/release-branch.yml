@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - dev
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   update-release:
-    if: github.ref_name == 'dev'
     runs-on: ubuntu-latest
     permissions:
       contents: write
